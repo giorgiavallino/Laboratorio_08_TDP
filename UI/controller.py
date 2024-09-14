@@ -15,8 +15,8 @@ class Controller:
         self._idMap = {}
         self.fillIDMap()
         self._nerc = None
-        self._years = 0
-        self._hours = 0
+        self._years = None
+        self._hours = None
 
     def handleWorstCase(self, e):
         pass
@@ -32,15 +32,7 @@ class Controller:
 
     # Definire il metodo update_Nerc
     def read_Nerc(self, e):
-        self._nerc = e.control.value
-
-    # Definire il metodo update_years
-    def read_years(self, e):
-        self._years = int(e.control.value)
-
-    # Definire il metodo update_hours
-    def read_hours(self, e):
-        self._hours = int(e.control.value)
+        self._nerc = e.control.data
 
     # Definire il metodo fillIDMap
     def fillIDMap(self):

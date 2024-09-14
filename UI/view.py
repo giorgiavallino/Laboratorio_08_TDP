@@ -43,11 +43,9 @@ class View(ft.UserControl):
                                    on_change = self._controller.read_Nerc)
         self._controller.populate_ddNerc()
         self._txtYears = ft.TextField(label = "Numero massimo di anni",
-                                      hint_text = "Inserire il numero massimo di anni",
-                                      on_change = self._controller.read_years)
+                                      hint_text = "Inserire il numero massimo di anni")
         self._txtHours = ft.TextField(label = "Numero massimo di ore",
-                                      hint_text = "Inserire il numero massimo di ore",
-                                      on_change = self._controller.read_hours)
+                                      hint_text = "Inserire il numero massimo di ore")
         self._btnWorstCase = ft.ElevatedButton(text = "Worst-Case analysis",
                                                tooltip = "Calcola il peggior caso possibile",
                                                on_click = self._controller.handleWorstCase)
@@ -64,10 +62,10 @@ class View(ft.UserControl):
         self._lv = ft.ListView(expand = 1, spacing = 10, padding = 20, auto_scroll = False)
 
         # Aggiungere alla pagina la list view
-        self._page.add(self._txtOut)
+        self._page.add(self._lv)
 
         # Update della pagina
-        self._page.update()
+        self.update_page()
 
     @property
     def controller(self):
